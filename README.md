@@ -6,7 +6,10 @@
 - Copy file to pod: `kubectl cp /local/path namespace/podname:path/to/directory`
   - ex `kubectl cp /local/dump mongo-0:/dump`
 - Get all deployed contaienrs by repository
-  - ex `kubectl get pods -o jsonpath="{..image}" |tr -s '[[:space:]]' '\n' |sort |uniq -c|grep -E -i -w "icgcargo|overture"`
+  - ex 
+  ```
+  kubectl get pods -o jsonpath="{..image}" |tr -s '[[:space:]]' '\n' |sort |uniq -c|grep -E -i -w "icgcargo|overture"
+  ```
 
 ## Docker
 

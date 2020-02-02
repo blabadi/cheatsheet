@@ -19,3 +19,8 @@ kubectl get pods -o jsonpath="{..image}" |tr -s '[[:space:]]' '\n' |sort |uniq -
 ## Docker
 
 
+## linux
+- kill all process by grep expression, example
+```
+$kill -9 $(ps ax | grep node | awk {'print$1'})
+```

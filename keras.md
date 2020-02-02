@@ -1,10 +1,11 @@
-# transfer from ResNet50
+# Transfer learning
+
+## transfer lower layers from ResNet50
 ```python
 from keras.applications.resnet50 import ResNet50
 from keras.preprocessing import image
 from keras.applications.resnet50 import preprocess_input
 
-# base on pretrained vgg
 input_tensor = Input(shape=(155, 155, 3))
 basemodel = ResNet50(include_top=False, weights='imagenet', input_tensor=input_tensor)
 target_layer_name = basemodel.layers[17].name

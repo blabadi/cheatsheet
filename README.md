@@ -15,7 +15,13 @@ kubectl cp /local/dump mongo-0:/dump
 ```
 kubectl get pods -o jsonpath="{..image}" |tr -s '[[:space:]]' '\n' |sort |uniq -c|grep -E -i -w "icgcargo|overture"
 ```
+a more detailed and better way to get it containers by pod:
+```
+kubectl get pods -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{"|"}{range .spec.containers[*]}{.image}{", "}{end}{end}'| sort | grep -E -i -w "icgcargo|overture"
 
+output example:
+clinical-argo-qa-97cf5cfdd-l54m9|icgcargo/clinical:1.0.2, 
+```
 ## Docker
 
 

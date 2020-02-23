@@ -30,3 +30,6 @@ clinical-argo-qa-97cf5cfdd-l54m9|icgcargo/clinical:1.0.2,
 ```
 $kill -9 $(ps ax | grep node | awk {'print$1'})
 ```
+- list disk usage `df`
+- check top disk usage in subdirectories `du -h | sort -nr | head -10`
+- recalculate the disk (if you increase the size as in aws ebs) `resize2fs /dev/xvda1`
